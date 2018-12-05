@@ -6,7 +6,6 @@ import * as actions from './actions'
 import Notes from './components/Notes';
 import NoteForm from './components/NoteForm';
 import SingleNote from './components/SingleNote';
- import TopNav from './components/TopNav';
 import { Navbar, Nav, NavItem, NavLink, NavbarBrand } from 'reactstrap';
 import lambdanotes  from './lambdanotes.png';
 

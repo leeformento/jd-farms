@@ -18,7 +18,7 @@ export const fetchNotes = () => {
     return dispatch => {
          dispatch({ type: FETCHING });
          axios
-         .get('https://fe-notes.herokuapp.com/note/get/all')
+         .get('https://backend-tala.herokuapp.com/notes')
          .then(response => {
              dispatch({ type: FETCHED, payload: response.data });
             })
