@@ -31,7 +31,7 @@ export const fetchNotes = () => {
 export const addNote = (note, history) => {
     return dispatch => {
         dispatch({ type: SAVING });
-        axios.post('https://fe-notes.herokuapp.com/note/create', {
+        axios.post('https://backend-tala.herokuapp.com/notes/addnote', {
             title: note.title,
             textBody: note.content,
         })
@@ -48,7 +48,7 @@ export const addNote = (note, history) => {
 export const fetchNote = noteId => {
     return dispatch => {
         dispatch({ type: FETCHING_NOTE });
-         axios.get(`https://fe-notes.herokuapp.com/note/get/${noteId}`)
+         axios.get(`https://backend-tala.herokuapp.com/notes/${noteId}`)
             .then(response => {
                 dispatch({ type: FETCHED_NOTE, payload: response.data });
             })
@@ -63,7 +63,7 @@ export const deleteNote =  (NoteId, history) => {
     return dispatch => {
         dispatch ({ type: DELETING });
         axios
-        .delete(`https://fe-notes.herokuapp.com/note/delete/${NoteId}`)
+        .delete(`https://backend-tala.herokuapp.com/notes/delete/${NoteId}`)
         .then(response => {
             dispatch({ type: DELETED, payload: response.data})
         })
@@ -78,7 +78,7 @@ export const updateNote = note => {
     return dispatch => {
         dispatch({ type: UPDATING});
         axios
-        .put(`https://fe-notes.herokuapp.com/note/edit/${note.id}`, {
+        .put(`https://backend-tala.herokuapp.com/notes/edit/${note.id}`, {
             title: note.title,
             textBody: note.content
         })
