@@ -24,11 +24,8 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
             title: '',
             content: ''
         })
-        window.location.reload(); 
-        this.props.history.push('/'); 
         
     }
-    
 
      render() {
         return (
