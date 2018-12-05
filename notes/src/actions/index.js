@@ -45,10 +45,10 @@ export const addNote = (note, history) => {
  }
 }
 
-export const fetchNote = noteId => {
+export const fetchNote = id => {
     return dispatch => {
         dispatch({ type: FETCHING_NOTE });
-         axios.get(`https://backend-tala.herokuapp.com/notes/${noteId}`)
+         axios.get(`https://backend-tala.herokuapp.com/notes/${id}`)
             .then(response => {
                 dispatch({ type: FETCHED_NOTE, payload: response.data });
             })
